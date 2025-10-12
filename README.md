@@ -1,36 +1,165 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🗓️ ناژو - سیستم نوبت‌دهی هوشمند
 
-## Getting Started
+<div dir="rtl">
 
-First, run the development server:
+## 📋 درباره پروژه
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+**ناژو** یک سیستم نوبت‌دهی مدرن و هوشمند است که با استفاده از تکنولوژی‌های روز دنیا ساخته شده است. این پروژه به کسب‌وکارها کمک می‌کند تا نوبت‌های خود را به صورت حرفه‌ای مدیریت کنند.
+
+## ✨ ویژگی‌های اصلی
+
+- 🎨 **رابط کاربری مدرن**: طراحی زیبا و کاربرپسند با استفاده از Tailwind CSS و shadcn/ui
+- 📱 **ریسپانسیو**: سازگار با تمام دستگاه‌ها (موبایل، تبلت، دسکتاپ)
+- 🌙 **حالت تاریک**: پشتیبانی کامل از حالت روشن و تاریک
+- 👥 **سه نقش کاربری**: کاربر عادی، کارکنان، و مدیر
+- 📊 **داشبورد جامع**: نمایش آمار و اطلاعات به صورت بصری
+- 🔔 **اعلان‌ها**: سیستم یادآوری و اطلاع‌رسانی
+- 🔐 **امنیت بالا**: استفاده از Supabase برای احراز هویت و ذخیره‌سازی
+
+## 🛠️ تکنولوژی‌های استفاده شده
+
+- **Next.js 15.5** - فریمورک React
+- **TypeScript** - برای Type Safety
+- **Tailwind CSS 4** - برای استایل‌دهی
+- **shadcn/ui** - کامپوننت‌های UI
+- **Supabase** - Backend as a Service
+- **Lucide React** - آیکون‌ها
+
+## 📁 ساختار پروژه
+
+```
+rnazho/
+├── src/
+│   ├── app/
+│   │   ├── page.tsx              # صفحه اصلی (Landing Page)
+│   │   ├── user/
+│   │   │   └── dashboard/        # داشبورد کاربران
+│   │   ├── staff/
+│   │   │   └── dashboard/        # داشبورد کارکنان
+│   │   └── admin/
+│   │       └── dashboard/        # داشبورد مدیریت
+│   ├── components/
+│   │   └── ui/                   # کامپوننت‌های shadcn
+│   └── lib/
+│       └── utils.ts              # توابع کمکی
+├── components.json               # تنظیمات shadcn
+└── tailwind.config.ts            # تنظیمات Tailwind
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 نصب و راه‌اندازی
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### پیش‌نیازها
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Node.js 20 یا بالاتر
+- pnpm (پیشنهادی) یا npm
 
-## Learn More
+### مراحل نصب
 
-To learn more about Next.js, take a look at the following resources:
+1. **کلون کردن پروژه**
+```bash
+git clone https://github.com/mmehdipoor1366/rnazho.git
+cd rnazho
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **نصب dependencies**
+```bash
+pnpm install
+# یا
+npm install
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. **راه‌اندازی پروژه**
+```bash
+pnpm dev
+# یا
+npm run dev
+```
 
-## Deploy on Vercel
+4. **مشاهده پروژه**
+پروژه روی آدرس `http://localhost:3000` اجرا می‌شود
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📦 اضافه کردن کامپوننت‌های shadcn
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+برای اضافه کردن کامپوننت‌های جدید:
+
+```bash
+npx shadcn@latest add [component-name]
+```
+
+مثال:
+```bash
+npx shadcn@latest add button
+npx shadcn@latest add card
+npx shadcn@latest add dialog
+```
+
+## 🎨 صفحات موجود
+
+### 1. صفحه اصلی (Landing Page)
+- هدر با منوی ناوبری
+- بخش Hero با دکمه‌های CTA
+- نمایش آمار و ارقام
+- معرفی امکانات (6 ویژگی اصلی)
+- توضیح نحوه کار (3 مرحله)
+- نظرات کاربران
+- بخش CTA نهایی
+- فوتر کامل
+
+### 2. داشبورد کاربر (`/user/dashboard`)
+- نمایش نوبت‌های آینده
+- تاریخچه نوبت‌ها
+- دریافت نوبت جدید
+
+### 3. داشبورد کارکنان (`/staff/dashboard`)
+- نوبت‌های امروز
+- مدیریت برنامه کاری
+- آمار عملکرد
+
+### 4. داشبورد مدیریت (`/admin/dashboard`)
+- آمار کامل سیستم
+- نمودارهای تحلیلی
+- مدیریت کاربران و کارکنان
+- فعالیت‌های اخیر
+
+## 🎯 مراحل بعدی (TODO)
+
+- [ ] پیاده‌سازی احراز هویت با Supabase
+- [ ] اتصال به دیتابیس
+- [ ] سیستم رزرو نوبت
+- [ ] پنل مدیریت خدمات
+- [ ] سیستم پرداخت
+- [ ] ارسال پیامک و ایمیل
+- [ ] گزارش‌گیری پیشرفته
+- [ ] اپلیکیشن موبایل
+
+## 🤝 مشارکت
+
+برای مشارکت در پروژه:
+
+1. Fork کنید
+2. برنچ جدید بسازید (`git checkout -b feature/AmazingFeature`)
+3. تغییرات خود را commit کنید (`git commit -m 'Add some AmazingFeature'`)
+4. Push کنید (`git push origin feature/AmazingFeature`)
+5. Pull Request باز کنید
+
+## 📝 لایسنس
+
+این پروژه تحت لایسنس MIT منتشر شده است.
+
+## 📞 تماس با ما
+
+برای سوالات و پیشنهادات می‌توانید با ما در تماس باشید:
+
+- 📧 ایمیل: support@nazho.ir
+- 🌐 وبسایت: [nazho.ir](https://nazho.ir)
+- 💬 تلگرام: @nazho_support
+
+## 🙏 تشکر
+
+از تمام کسانی که در توسعه این پروژه مشارکت داشته‌اند، صمیمانه تشکر می‌کنیم.
+
+---
+
+ساخته شده با ❤️ توسط تیم ناژو
+
+</div>

@@ -1,45 +1,35 @@
-import React from 'react'
-import Container from '../../components/Container'
-import Hero from '../../components/Hero'
-import FeatureCard from '../../components/FeatureCard'
-import Testimonial from '../../components/Testimonial'
+import Hero from "@/components/Hero";
+import ServiceCard from "@/components/ServiceCard";
+import Testimonial from "@/components/Testimonial";
+import ContactSection from "@/components/ContactSection";
 
-export default function HomePage() {
+export default function HomePage(){
   return (
-    <Container>
+    <div>
       <Hero />
-
-      <section className="py-16">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-          <FeatureCard title="رزرو آنلاین" desc="رزرو ساده و قابل ادغام با وب‌سایت شما" icon={<span>📅</span>} />
-          <FeatureCard title="مدیریت سرویس" desc="سرویس‌ها، قیمت‌ها و زمان‌بندی را به راحتی تنظیم کنید" icon={<span>⚙️</span>} />
-          <FeatureCard title="یادآوری خودکار" desc="ارسال نوتیفیکیشن و پیامک یادآوری" icon={<span>🔔</span>} />
-        </div>
-      </section>
-
-      <section className="py-16 bg-gray-50 dark:bg-slate-800">
-        <div className="container mx-auto">
-          <h3 className="text-2xl font-semibold mb-6 text-center">نظرات مشتریان</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Testimonial quote="پلتفرم ساده و قابل اطمینان. رضایت مشتریان ما افزایش یافت." author="کلینیک زیبایی آریا" />
-            <Testimonial quote="گزارش‌ها و مدیریت نوبت‌ها بسیار کاربردی است." author="مطب دکتر حسینی" />
-            <Testimonial quote="پشتیبانی سریع و دقیق، تجربهٔ عالی." author="سالن زیبایی نگار" />
+      <section id="services" className="py-12">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-bold mb-6">خدمات ما</h2>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <ServiceCard title="ویزیت آنلاین" desc="رزرو ویزیت آنلاین با پزشکان و مشاوران" />
+            <ServiceCard title="مشاوره تلفنی" desc="رزرو تماس تلفنی با متخصصان" />
+            <ServiceCard title="مدیریت تقویم" desc="هماهنگی و مدیریت ساعات کاری" />
           </div>
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="container mx-auto max-w-3xl text-center">
-          <h3 className="text-2xl font-semibold mb-4">تماس با ما</h3>
-          <p className="text-muted mb-6">برای کسب اطلاعات بیشتر فرم زیر را پر کنید یا با ما تماس بگیرید.</p>
-          <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input placeholder="نام" className="p-3 border rounded" />
-            <input placeholder="ایمیل" className="p-3 border rounded" />
-            <textarea placeholder="پیام" className="p-3 border rounded md:col-span-2" />
-            <button className="px-6 py-3 bg-primary text-white rounded-md md:col-span-2">ارسال</button>
-          </form>
+      <section className="py-12 bg-muted/5">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-bold mb-6">نظرات کاربران</h2>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Testimonial quote="خدمات عالی و پشتیبانی سریع" author="مریم" />
+            <Testimonial quote="رزرو سریع و بدون دردسر" author="علی" />
+            <Testimonial quote="طراحی ساده و قابل استفاده" author="سارا" />
+          </div>
         </div>
       </section>
-    </Container>
+
+      <ContactSection />
+    </div>
   )
 }

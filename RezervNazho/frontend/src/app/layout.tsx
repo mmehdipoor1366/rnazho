@@ -1,21 +1,18 @@
-import './globals.css'
-import React from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import "../../../../tailwind.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: 'RezervNazho',
-  description: 'سامانه رزرو و نوبت‌دهی RezervNazho'
-}
+  title: "رزرونازخو",
+  description: "سامانه نوبت‌دهی آنلاین",
+};
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }:{children:React.ReactNode}){
   return (
     <html lang="fa" dir="rtl">
-      <body>
+      <body className="antialiased bg-background text-foreground">
         <Header />
-        <main className="min-h-[70vh]">
-          {children}
-        </main>
+        <main className="pt-20">{children}</main>
         <Footer />
       </body>
     </html>

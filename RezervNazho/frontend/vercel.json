@@ -1,0 +1,21 @@
+{
+  "version": 3,
+  "builds": [
+    { "src": "package.json", "use": "@vercel/next" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/$1" }
+  ],
+  "functions": {},
+  "images": {
+    "domains": ["images.unsplash.com"],
+    "remotePatterns": [
+      {
+        "protocol": "https",
+        "hostname": "images.unsplash.com",
+        "port": "",
+        "pathname": "**"
+      }
+    ]
+  }
+}

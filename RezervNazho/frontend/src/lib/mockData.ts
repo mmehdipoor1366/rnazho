@@ -1,6 +1,4 @@
-// Simple in-memory mock data shared between API route handlers.
-// This lives only during the dev server process and is reset on restart.
-
+// Simple in-memory mock data shared between API route handlers
 type User = { id: string; name: string; email: string }
 type Appointment = { id: string; userId: string; service: string; datetime: string; partner?: string }
 type Ticket = { id: string; title: string; message: string; status: 'open' | 'closed' }

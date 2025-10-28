@@ -1,59 +1,99 @@
-# 🗓️ ناژو - سیستم نوبت‌دهی هوشمند
+# رزرو ناژو (rnazho)
 
-<div dir="rtl">
+## Persian Appointment Booking Website
 
-## 📋 درباره پروژه
+A modern, full-featured appointment booking system built with Next.js 15, TypeScript, and Tailwind CSS.
 
-**ناژو** یک سیستم نوبت‌دهی مدرن و هوشمند است که با استفاده از تکنولوژی‌های روز دنیا ساخته شده است.
+## 🚀 Features
 
-## ✨ ویژگی‌های اصلی
+- ⚡ Next.js 15 with App Router
+- 🔷 TypeScript for type safety
+- 💅 Tailwind CSS for styling
+- 📱 Fully responsive design
+- 🌐 Persian (Farsi) language support
+- 🎨 Modern UI components
 
-- 🎨 رابط کاربری مدرن با shadcn/ui
-- 📱 ریسپانسیو و موبایل فرندلی
-- 🌙 حالت تاریک
-- 👥 سه نقش: کاربر، کارکنان، مدیر
-- 📊 داشبورد جامع
+## 📦 Tech Stack
 
-## 🛠️ تکنولوژی‌ها
+- **Framework:** Next.js 15
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Package Manager:** npm/yarn/pnpm
 
-- Next.js 15.5
-- TypeScript
-- Tailwind CSS 3
-- shadcn/ui
-- Supabase
+## 🏗️ Project Structure
 
-## 🚀 نصب و راه‌اندازی
+```
+rnazho/
+├── app/              # Next.js app directory (pages, layouts, routes)
+├── components/       # Reusable React components
+├── layouts/          # Layout components
+├── styles/           # Global styles and CSS modules
+├── utils/            # Utility functions and helpers
+├── types/            # TypeScript type definitions
+├── public/           # Static assets (images, fonts, etc.)
+└── ...config files
+```
 
+## 🛠️ Getting Started
+
+### Prerequisites
+
+- Node.js 18.17 or later
+- npm, yarn, or pnpm
+
+### Installation
+
+1. Clone the repository:
 ```bash
-# نصب
-pnpm install
+git clone https://github.com/mmehdipoor1366/rnazho.git
+cd rnazho
+```
 
-# اجرا
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Run the development server:
+```bash
+npm run dev
+# or
+yarn dev
+# or
 pnpm dev
 ```
 
-## 📁 ساختار
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-```
-src/
-├── app/
-│   ├── page.tsx           # صفحه اصلی
-│   ├── user/dashboard/    # داشبورد کاربر
-│   ├── staff/dashboard/   # داشبورد کارکنان
-│   └── admin/dashboard/   # داشبورد مدیر
-├── components/ui/         # کامپوننت‌های UI
-└── lib/utils.ts          # توابع کمکی
-```
+## 📜 Available Scripts
 
-## 📝 مراحل بعدی
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run format` - Format code with Prettier
+- `npm run format:check` - Check code formatting
+- `npm run type-check` - Run TypeScript type checking
 
-- [ ] احراز هویت با Supabase
-- [ ] سیستم رزرو نوبت
-- [ ] پنل مدیریت
-- [ ] ارسال پیامک
+## 🎨 Code Quality
+
+This project uses:
+- **ESLint** for code linting
+- **Prettier** for code formatting
+- **TypeScript** for type safety
+
+## 📄 License
+
+MIT License
+
+## 👨‍💻 Author
+
+mmehdipoor1366
 
 ---
 
-© ۱۴۰۳ ناژو
-
-</div>
+Built with ❤️ using Next.js 15

@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: theme("colors.bg");
+}
+
+html, body, #__next {
+  height: 100%;
+}
+
+html[dir="rtl"] {
+  direction: rtl;
+}
+
+body {
+  @apply bg-bg text-gray-800 antialiased;
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', Arial;
+}

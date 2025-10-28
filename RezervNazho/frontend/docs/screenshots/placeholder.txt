@@ -1,0 +1,10 @@
+Placeholder files for screenshots.
+
+Please add real UI screenshots (e.g. hero.png, dashboard-user.png, dashboard-partner.png) into this folder.
+
+Suggested filenames:
+- hero.png
+- landing-features.png
+- dashboard-user.png
+- dashboard-partner.png
+- support-panel.png

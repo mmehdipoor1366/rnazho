@@ -1,59 +1,64 @@
-# 🗓️ ناژو - سیستم نوبت‌دهی هوشمند
+# رزرو ناژو (Rnazho)
 
-<div dir="rtl">
+🇮🇷 Persian Appointment Booking Website
 
-## 📋 درباره پروژه
+## 📋 About
 
-**ناژو** یک سیستم نوبت‌دهی مدرن و هوشمند است که با استفاده از تکنولوژی‌های روز دنیا ساخته شده است.
+Rnazho is a modern, Persian-language appointment booking platform built with Next.js 16 and TypeScript.
 
-## ✨ ویژگی‌های اصلی
+## 🚀 Getting Started
 
-- 🎨 رابط کاربری مدرن با shadcn/ui
-- 📱 ریسپانسیو و موبایل فرندلی
-- 🌙 حالت تاریک
-- 👥 سه نقش: کاربر، کارکنان، مدیر
-- 📊 داشبورد جامع
+### Prerequisites
 
-## 🛠️ تکنولوژی‌ها
+- Node.js 18.17.0 or higher
+- npm 9.0.0 or higher
 
-- Next.js 15.5
-- TypeScript
-- Tailwind CSS 3
-- shadcn/ui
-- Supabase
-
-## 🚀 نصب و راه‌اندازی
+### Installation
 
 ```bash
-# نصب
-pnpm install
+# Install dependencies
+npm install
 
-# اجرا
-pnpm dev
+# Run development server
+npm run dev
 ```
 
-## 📁 ساختار
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 🛠️ Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run format` - Format code with Prettier
+- `npm run format:check` - Check code formatting
+
+## 📁 Project Structure
 
 ```
-src/
-├── app/
-│   ├── page.tsx           # صفحه اصلی
-│   ├── user/dashboard/    # داشبورد کاربر
-│   ├── staff/dashboard/   # داشبورد کارکنان
-│   └── admin/dashboard/   # داشبورد مدیر
-├── components/ui/         # کامپوننت‌های UI
-└── lib/utils.ts          # توابع کمکی
+rnazho/
+├── app/              # Next.js 16 App Router
+├── components/       # Reusable React components
+├── layouts/          # Layout components
+├── styles/           # Global styles and CSS modules
+├── utils/            # Utility functions and helpers
+├── public/           # Static assets
+└── types/            # TypeScript type definitions
 ```
 
-## 📝 مراحل بعدی
+## 🎨 Tech Stack
 
-- [ ] احراز هویت با Supabase
-- [ ] سیستم رزرو نوبت
-- [ ] پنل مدیریت
-- [ ] ارسال پیامک
+- **Framework:** Next.js 16
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Linting:** ESLint
+- **Formatting:** Prettier
+
+## 📝 License
+
+Private Project - All Rights Reserved
 
 ---
 
-© ۱۴۰۳ ناژو
-
-</div>
+Developed with ❤️ for Persian-speaking users

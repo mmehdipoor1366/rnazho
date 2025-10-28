@@ -1,24 +1,22 @@
 import React from 'react'
-import Container from '../../components/Container'
+import DashboardLayout from '../../components/dashboard/DashboardLayout'
 
 export default function SupportPage() {
   return (
-    <Container>
-      <div className="max-w-2xl mx-auto py-16">
-        <h2 className="text-2xl font-semibold mb-4">پشتیبانی</h2>
-        <p className="text-muted mb-6">اگر سوال یا مشکلی دارید از طریق فرم زیر با ما در ارتباط باشید.</p>
-
-        <form className="space-y-4">
-          <input placeholder="نام و نام خانوادگی" className="w-full p-3 border rounded" />
-          <input placeholder="ایمیل" className="w-full p-3 border rounded" />
-          <textarea placeholder="توضیحات" className="w-full p-3 border rounded h-40" />
-          <div className="flex items-center gap-3">
-            <button className="px-5 py-3 bg-primary text-white rounded">ارسال</button>
-            <button type="button" className="px-5 py-3 border rounded">انصراف</button>
+    <DashboardLayout>
+      <div className="max-w-3xl mx-auto py-6">
+        <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-card">
+          <h3 className="text-lg font-semibold mb-4">درخواست‌های پشتیبانی</h3>
+          <div className="mb-4">
+            <input placeholder="جستجوی تیکت..." className="w-full p-3 border rounded" />
           </div>
-        </form>
+          <div className="space-y-3">
+            <div className="p-4 border rounded">تیکت #123 — مشکل پرداخت — <span className="text-sm text-muted">در انتظار پاسخ</span></div>
+            <div className="p-4 border rounded">تیکت #122 — سوال درباره سرویس — <span className="text-sm text-muted">پاسخ داده شده</span></div>
+          </div>
+        </div>
       </div>
-    </Container>
+    </DashboardLayout>
   )
 }
 import React from 'react'

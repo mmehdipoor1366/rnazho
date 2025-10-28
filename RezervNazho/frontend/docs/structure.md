@@ -1,3 +1,31 @@
+# ساختار پروژه — RezervNazho Frontend
+
+این فایل توضیح می‌دهد که پوشه‌ها و فایل‌های اصلی پروژه چه نقشی دارند تا مشارکت‌کنندگان جدید سریع‌تر با ساختار آشنا شوند.
+
+ریشهٔ پروژه (RezervNazho/frontend)
+- `package.json`, `pnpm-lock.yaml` — وابستگی‌ها و اسکریپت‌ها
+- `next.config.ts` — تنظیمات Next.js
+- `tailwind.config.ts` — تنظیمات Tailwind (شامل RTL)
+- `.github/workflows/` — Workflowهای CI/CD
+- `vercel.json` — پیکربندی Vercel
+
+پوشهٔ `src/`
+- `app/` — App Router (صفحات، layoutها و route groups)
+  - `(public)/home` — صفحهٔ لندینگ
+  - `(auth)/login`, `(auth)/register` — صفحات احراز هویت
+  - `(dashboard)/` — layout مشترک برای پنل‌ها (user/partner/support)
+  - `api/` — APIهای mock برای توسعه محلی
+- `components/` — کامپوننت‌های UI قابل استفاده مجدد (Header, Footer, Sidebar, cardها)
+- `lib/` — کتابخانه‌های کمکی، wrapperهای API، mock data
+
+فایل‌های مهم
+- `src/app/layout.tsx` — ریشهٔ layout که فونت RTL و ThemeProvider را اعمال می‌کند.
+- `src/lib/api.ts` — wrapper برای فراخوانی API (استفاده در کامپوننت‌ها)
+- `src/lib/mockData.ts` — دادهٔ نمونه برای APIهای mock (در توسعه محلی)
+
+راهنمای افزودن الهام‌بخشها
+- کامپوننت‌های UI را در `src/components/` قرار دهید و از سبک‌دهی Tailwind استفاده کنید.
+- صفحه‌های جدید را زیر `src/app/` اضافه کنید و در صورت نیاز route group جدید بسازید.
 # Project Structure — RezervNazho Frontend
 
 Top-level (inside `RezervNazho/frontend`):

@@ -1,3 +1,9 @@
+Add screenshots (PNG or JPG) under this folder. Recommended sizes:
+- Landing hero: 1600x900
+- Dashboard overview: 1200x800
+- Mobile screenshots: 720x1280
+
+Place images and reference them in README or PRs.
 Placeholder files for screenshots.
 
 Please add real UI screenshots (e.g. hero.png, dashboard-user.png, dashboard-partner.png) into this folder.

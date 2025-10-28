@@ -1,47 +1,45 @@
-# Cloud Onboarding — Vercel (RezervNazho Frontend)
+# راه‌اندازی ابر (Vercel) برای فرانت‌اند رزرونازخو
 
-This guide explains how to connect the `RezervNazho/frontend` project to Vercel, configure environment variables and secrets, and enable preview deployments and automatic production deployments.
+این راهنما مرحله‌به‌مرحله نحوهٔ اتصال فرانت‌اند به Vercel، اضافه کردن متغیرهای محیطی و نکات مربوط به استقرار را پوشش می‌دهد.
 
-## 1. Create a Vercel project
-1. Sign in to https://vercel.com with your GitHub account.
-2. Click "New Project" → "Import Git Repository" → select `mmehdipoor1366/rnazho`.
-3. Set the Project Root to `RezervNazho/frontend` (important) and framework to Next.js.
-4. Continue and create the project.
+مرحله 1 — ایجاد پروژه در Vercel
+--------------------------------
+1. وارد حساب Vercel شوید و روی "New Project" کلیک کنید.
+2. مخزن GitHub خود (`mmehdipoor1366/rnazho`) را انتخاب کنید و مسیر / Project Root را به `RezervNazho/frontend` تنظیم کنید.
+3. فریم‌ورک را روی Next.js قرار دهید و پروژه را ایجاد کنید.
 
-## 2. Environment Variables
-In the Vercel project settings, add environment variables for each environment (Preview and Production):
+مرحله 2 — متغیرهای محیطی
+-------------------------
+در تنظیمات پروژهٔ Vercel (Project Settings → Environment Variables) متغیرهای زیر را برای محیط‌های Preview و Production اضافه کنید:
 
-- `NEXT_PUBLIC_API_BASE_URL` — the base URL used by the frontend to call APIs. For local dev use `http://localhost:3000` or leave blank and rely on relative paths.
-- `NEXT_PUBLIC_APP_NAME` — RezervNazho
+- `NEXT_PUBLIC_API_BASE_URL` — آدرس پایهٔ API. برای توسعه محلی می‌توانید از `http://localhost:3000` استفاده کنید یا خالی بگذارید تا مسیرهای نسبی مورد استفاده قرار گیرند.
+- `NEXT_PUBLIC_APP_NAME` — نام برنامه (مثلاً RezervNazho)
 
-Add these values for Preview and Production environments accordingly.
+مرحله 3 — تولید توکن Vercel برای CI
+----------------------------------
+1. به https://vercel.com/account/tokens بروید.
+2. یک توکن جدید بسازید (نام پیشنهادی: `ci-deploy-token`).
+3. مقدار توکن را کپی و آن را به عنوان Secret در مخزن GitHub اضافه کنید.
 
-## 3. Generate a Vercel token (for CI)
-1. Go to https://vercel.com/account/tokens
-2. Create a new token named `ci-deploy-token` (or similar)
-3. Save the token value — you'll add it to GitHub.
+مرحله 4 — اضافه کردن Secrets به GitHub
+-------------------------------------
+در GitHub → Settings → Secrets and variables → Actions اضافه کنید:
 
-## 4. Add GitHub repository secrets
-In the GitHub repository settings → Secrets → Actions, add the following:
+- `VERCEL_TOKEN` — توکن ساخته شده در مرحلهٔ قبل
+- `VERCEL_ORG_ID` — شناسهٔ سازمان/تیم Vercel
+- `VERCEL_PROJECT_ID` — شناسهٔ پروژه در Vercel
 
-- `VERCEL_TOKEN` — the token created above
-- `VERCEL_ORG_ID` — Vercel Organization ID (from project settings)
-- `VERCEL_PROJECT_ID` — Vercel Project ID (from project settings)
+این مقادیر توسط GitHub Actions برای ایجاد استقرارها استفاده می‌شوند.
 
-These are used by the GitHub Actions workflow to trigger Vercel deployments.
+مرحله 5 — دامنهٔ سفارشی (اختیاری)
+---------------------------------
+1. در Vercel (Project Settings → Domains) دامنهٔ خود را اضافه کنید.
+2. رکوردهای DNS که Vercel به شما می‌دهد را در کنترل پنل ثبت‌کننده دامنه وارد کنید.
+3. پس از انتشار رکوردها، Vercel گواهی TLS را به‌صورت خودکار صادر و فعال خواهد کرد.
 
-## 5. Domain and DNS (optional)
-If you want `rezervnazho.yourdomain`:
-1. Add a Domain in Vercel project settings.
-2. Add the DNS records provided by Vercel to your registrar.
-3. Wait for verification and TLS provisioning (automatic).
+نکات عملی
+---------
+- Preview deployments به‌طور خودکار برای Pull Requestها ساخته می‌شوند. بررسی کنید که secret `VERCEL_TOKEN` در دسترس workflowها باشد.
+- برای توسعه محلی می‌توانید از APIهای mock داخلی (فایل‌های داخل `src/app/api/*`) استفاده کنید.
+- تنظیمات مربوط به بهینه‌سازی تصاویر را در `vercel.json` و پنل Vercel بررسی کنید.
 
-## 6. Preview Deployments
-Preview deployments are automatically created on Pull Requests. Ensure the GitHub Actions workflow has access to the `VERCEL_TOKEN` secret.
-
-## 7. Rollbacks & logs
-- Use the Vercel dashboard to view deployments, logs and to rollback to previous deployments if needed.
-
-## 8. Tips
-- Use environment-specific feature flags in env vars (eg. `FEATURE_CALENDAR=on`) rather than committing config to source.
-- Keep secrets in GitHub or Vercel — never commit them to Git.

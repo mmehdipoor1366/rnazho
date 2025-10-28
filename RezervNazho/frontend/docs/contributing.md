@@ -1,3 +1,27 @@
+# مشارکت و قوانین کد — RezervNazho Frontend
+
+از علاقه‌مندی شما برای کمک و مشارکت در پروژه خوشحالم. لطفاً قبل از ارسال Pull Request موارد زیر را مطالعه کنید.
+
+قوانین اصلی
+- Fork & PR: برای تغییرات بزرگ ابتدا یک issue باز کنید، سپس شاخهٔ feature از `main` ایجاد کنید و PR بفرستید.
+- نام‌گذاری شاخه: از قالب `feat/<short>`, `fix/<short>`, `chore/<short>`, `doc/<short>` استفاده کنید.
+- پیام کمیت (commit): از Conventional Commits پیروی شود، مثلا:
+  - `feat(ui): add landing hero`
+  - `fix(api): correct appointments endpoint`
+  - `docs: update README`
+
+فرمت کد
+- از ESLint و Prettier استفاده کنید. قبل از ارسال PR `pnpm lint` را اجرا کنید و خطاها را رفع کنید.
+
+آزمایش و بررسی
+- هر PR باید حداقل یک توصیف و اسکرین‌شات (یا GIF کوتاه) برای تغییرات UI داشته باشد.
+- PRها بعد از ایجاد، توسط تیم مورد بازبینی قرار می‌گیرند؛ لطفا پاسخ بازخوردها را در همان شاخه اعمال کنید.
+
+ممنوعیت‌ها
+- از کامیت کردن توکن‌ها یا secrets در سورس خودداری کنید.
+
+ارتباط
+- اگر سوالی داشتید، یک issue باز کنید یا در PR از @mentions استفاده کنید.
 # Contributing to RezervNazho Frontend
 
 Thanks for wanting to contribute! Follow these guidelines to make your PRs smooth and reviewable.

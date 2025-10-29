@@ -2,10 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ==================== Persian Fonts ==================== */
+@font-face {
+  font-family: "Estedad";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/gh/rastikerdar/estedad@v6.0.0/fonts/webfonts/Estedad-VF.woff2")
+    format("woff2-variations");
+}
+
+@font-face {
+  font-family: "IRANSansX";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/gh/rastikerdar/iran-sans-x@v4.0.0/fonts/webfonts/IRANSansX-VF.woff2")
+    format("woff2-variations");
+}
+
+/* ==================== CSS Variables ==================== */
 @layer base {
   :root {
+    /* Font Variables */
+    --font-estedad: "Estedad", "IRANSansX", "Tahoma", sans-serif;
+
+    /* Color Variables - Light Mode */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
     --primary: 221.2 83.2% 53.3%;
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
@@ -21,33 +49,167 @@
     --ring: 221.2 83.2% 53.3%;
     --radius: 0.5rem;
   }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
 }
 
+/* ==================== Base Styles ==================== */
 @layer base {
   * {
     @apply border-border;
   }
-  
+
   body {
-    @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
   }
-  
-  /* Persian font support */
-  @font-face {
-    font-family: 'IRANSans';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
+
+  /* RTL Support */
+  html[dir="rtl"] body {
+    direction: rtl;
+    text-align: right;
   }
-  
+
   html[lang="fa"] body {
-    font-family: 'IRANSans', 'Tahoma', sans-serif;
+    font-family: var(--font-estedad), "IRANSansX", "Tahoma", sans-serif;
+  }
+
+  /* Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Selection Color */
+  ::selection {
+    @apply bg-primary/20 text-primary-foreground;
+  }
+
+  /* Focus Visible */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
   }
 }
 
+/* ==================== Utility Classes ==================== */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+
+  /* RTL Utilities */
+  .rtl-mirror {
+    transform: scaleX(-1);
+  }
+
+  [dir="rtl"] .rtl-flip {
+    transform: scaleX(-1);
+  }
+
+  /* Persian Number Support */
+  .persian-numbers {
+    font-variant-numeric: normal;
+  }
+}
+
+/* ==================== Component Overrides ==================== */
+@layer components {
+  /* Button RTL Support */
+  [dir="rtl"] button,
+  [dir="rtl"] .button {
+    text-align: center;
+  }
+
+  /* Input RTL Support */
+  [dir="rtl"] input,
+  [dir="rtl"] textarea {
+    text-align: right;
+  }
+
+  /* Card Spacing */
+  .card {
+    @apply rounded-lg border bg-card text-card-foreground shadow-sm;
+  }
+
+  /* Container */
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* ==================== Animations ==================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* RTL Animation */
+[dir="rtl"] @keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.animate-slide-right {
+  animation: slideInRight 0.6s ease-out;
 }
